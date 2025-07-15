@@ -1,6 +1,5 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
-import { Image } from "astro:assets";
 
 const { user, isLoggedIn } = Astro.locals;
 
@@ -33,13 +32,12 @@ const { email, name, avatar, emailVerified } = user;
     <div class="card w-96 mx-auto bg-white shadow-xl hover:shadow rounded">
       {
         avatar ? (
-          <Image
+          <img
             class="w-32 mx-auto rounded-full -mt-20 border-8 border-white"
             src={avatar}
             alt={`Avatar de ${name}`}
             width={128}
             height={128}
-            quality={"max"}
           />
         ) : (
           <div class="w-32 h-32 mx-auto rounded-full -mt-20 border-8 border-white bg-gray-300 flex justify-center items-center">
